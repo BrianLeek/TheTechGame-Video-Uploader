@@ -65,7 +65,7 @@ def load_selenium():
     prefs = {"profile.default_content_setting_values.notifications" : 2} # Press "Allow" on the notifications popup.
     # Disable images from being displayed if "disable_images" is set to "True" in config.py.
     if config.disable_images == True:
-        disable_images_prefs = {"profile.managed_default_content_settings.images": 2} # Uncomment to disbale images.
+        disable_images_prefs = {"profile.managed_default_content_settings.images": 2}
         prefs.update(disable_images_prefs)
     else:
         pass
@@ -80,7 +80,7 @@ def load_selenium():
     else:
         pass
 
-    driver = webdriver.Chrome(executable_path=binary_path,chrome_options=options) # Path to the webdriver set in config.py.
+    driver = webdriver.Chrome(executable_path=binary_path,chrome_options=options)
 
 # This function will soon be used to cycle through the videos, select one and be used to input the correct titles and descriptions (maybe). For now it's just used to select the number in the title for downloaded videos.
 def cycle_through_videos():
@@ -127,17 +127,6 @@ def thetechgame_mode():
             time.sleep(2)
             driver.get(f"{config.ttg_base_url}{config.ttg_upload_url}")
             time.sleep(2)
-
-    # This function isn't being used anywhere at this time but it's the time to wait till the script will close after pressing the submit video button.
-    def thetechgame_video_submit_countdown(time_wait):
-        while time_wait:
-            mins, secs = divmod(time_wait, 60)
-            timer = '{:02d}:{:02d}'.format(mins, secs)
-            print(f"Finishing up. The script will close in {timer}. Please wait.", end="\r")
-            time.sleep(1)
-            time_wait -= 1
-        print("Successfully submitted video. Please run the script to submit another.")
-        sys.exit()
 
     # This function will be used on the submit video page to input the title, description, etc. Also to select the video to be uploaded.
     def thetechgame_video_upload_page():

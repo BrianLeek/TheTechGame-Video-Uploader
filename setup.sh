@@ -14,6 +14,7 @@ if [ ! -f .is_setup ]; then
     fi
     echo "Installed all required packages! Now, just a few questions. You can edit these later in config.py."
     echo ""
+  echo "Path where videos will be saved to after downloading."
 	echo "Example (Windows): C:/Users/FakeUser/Desktop/TheTechGame Video Uploader/"
 	while true; do
 		printf "Video Path: "
