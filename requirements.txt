@@ -1,0 +1,6 @@
+chromedriver-py==88.0.4324.96 # You might need to change this depended on your Google Chrome version. At the time of writing this script I used Chromedriver version 88.0.4324.96 and Google Chrome 88.0.4324.182.
+geckodriver-autoinstaller==0.1.0
+selenium==3.141.0
+urllib3==1.26.3
+youtube-dl==2021.2.4.1
+youtube-uploader-selenium==0.1.0
